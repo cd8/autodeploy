@@ -33,13 +33,11 @@ Start-Service wmsvc
 # Invoke-WebRequest https://go.microsoft.com/fwlink/?LinkId=817246 -outfile c:\temp\DotNetCore.WindowsHosting.exe
 # Start-Process c:\temp\DotNetCore.WindowsHosting.exe -ArgumentList '/quiet' -Wait
 Invoke-WebRequest http://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi -outfile c:\tmp\WebDeploy_amd64_en-US.msi
-Start-Process c:\tmp\WebDeploy_amd64_en-US.msi /passive ADDLOCAL=ALL /norestart /l* C:\tmp\WebDeploy_amd64_en.txt -Wait
-
+Start-Process C:\tmp\WebDeploy_amd64_en-US.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=239644 -outfile c:\tmp\SQLSysClrTypes.msi
-Start-Process c:\tmp\SQLSysClrTypes.msi /passive ADDLOCAL=ALL /norestart /l* C:\tmp\SQLSysClrTypesLog.txt -Wait
-
+Start-Process c:\tmp\SQLSysClrTypes.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=239659 -outfile c:\tmp\SharedManagementObjects.msi
-Start-Process c:\tmp\SharedManagementObjects.msi /passive ADDLOCAL=ALL /norestart /l* C:\tmp\SharedManagementObjects.txt -Wait
+Start-Process c:\tmp\SharedManagementObjects.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 
 
 
