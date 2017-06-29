@@ -43,8 +43,8 @@ Start-Process c:\tmp\SQLSysClrTypes.msi -ArgumentList /passive, ADDLOCAL=ALL, /n
 Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=239659 -outfile c:\tmp\SharedManagementObjects.msi
 Start-Process c:\tmp\SharedManagementObjects.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 
-Invoke-WebRequest https://download.microsoft.com/download/6/7/D/67D80164-7DD0-48AF-86E3-DE7A182D6815/rewrite_2.0_rtw_x64.msi -outfile c:\tmp\rewrite_2.0_rtw_x64.msi
-Start-Process c:\tmp\rewrite_2.0_rtw_x64.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
+Invoke-WebRequest https://download.microsoft.com/download/C/9/E/C9E8180D-4E51-40A6-A9BF-776990D8BCA9/rewrite_amd64.msi -outfile c:\tmp\rewrite_amd64.msi
+Start-Process c:\tmp\rewrite_amd64.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 
 # Download music app
 # Invoke-WebRequest  https://github.com/Microsoft/dotnet-core-sample-templates/raw/master/dotnet-core-music-windows/music-app/music-store-azure-demo-pub.zip -OutFile c:\temp\musicstore.zip
