@@ -28,14 +28,6 @@ Stop-Service wmsvc
 Set-Service wmsvc -startuptype "automatic"
 Start-Service wmsvc
  
-
-# Install dot.net core sdk
-# Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=615460 -outfile c:\temp\vc_redistx64.exe
-# Start-Process c:\temp\vc_redistx64.exe -ArgumentList '/quiet' -Wait
-# Invoke-WebRequest https://go.microsoft.com/fwlink/?LinkID=809122 -outfile c:\temp\DotNetCore.1.0.0-SDK.Preview2-x64.exe
-# Start-Process c:\temp\DotNetCore.1.0.0-SDK.Preview2-x64.exe -ArgumentList '/quiet' -Wait
-# Invoke-WebRequest https://go.microsoft.com/fwlink/?LinkId=817246 -outfile c:\temp\DotNetCore.WindowsHosting.exe
-# Start-Process c:\temp\DotNetCore.WindowsHosting.exe -ArgumentList '/quiet' -Wait
 Invoke-WebRequest http://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi -outfile c:\tmp\WebDeploy_amd64_en-US.msi
 Start-Process C:\tmp\WebDeploy_amd64_en-US.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 Invoke-WebRequest http://go.microsoft.com/fwlink/?LinkID=239644 -outfile c:\tmp\SQLSysClrTypes.msi
@@ -58,7 +50,7 @@ Start-Process c:\tmp\rewrite_amd64.msi -ArgumentList /passive, ADDLOCAL=ALL, /no
 # Start-Process 'C:\Program Files\dotnet\dotnet.exe' -ArgumentList 'c:\music\MusicStore.dll'
 
 # Configure iis
-Remove-WebSite -Name "Default Web Site"
-Set-ItemProperty IIS:\AppPools\DefaultAppPool\ managedRuntimeVersion ""
+#Remove-WebSite -Name "Default Web Site"
+#Set-ItemProperty IIS:\AppPools\DefaultAppPool\ managedRuntimeVersion ""
 # New-Website -Name "MusicStore" -Port 80 -PhysicalPath C:\music\ -ApplicationPool DefaultAppPool
 # & iisreset
