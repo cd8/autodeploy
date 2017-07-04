@@ -50,7 +50,7 @@ Start-Process c:\tmp\rewrite_amd64.msi -ArgumentList /passive, ADDLOCAL=ALL, /no
 # Start-Process 'C:\Program Files\dotnet\dotnet.exe' -ArgumentList 'c:\music\MusicStore.dll'
 
 # Configure iis
-#Remove-WebSite -Name "Default Web Site"
-#Set-ItemProperty IIS:\AppPools\DefaultAppPool\ managedRuntimeVersion ""
+Remove-WebSite -Name "Default Web Site"
+Set-ItemProperty IIS:\AppPools\DefaultAppPool\ managedRuntimeVersion ""
 # New-Website -Name "MusicStore" -Port 80 -PhysicalPath C:\music\ -ApplicationPool DefaultAppPool
 # & iisreset
