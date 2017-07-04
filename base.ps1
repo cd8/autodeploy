@@ -10,7 +10,8 @@
 # )
 
 # Firewall
-#netsh advfirewall firewall add rule name="http" dir=in action=allow protocol=TCP localport=80
+netsh advfirewall firewall add rule name="http" dir=in action=allow protocol=TCP localport=8080
+netsh advfirewall firewall add rule name="http" dir=in action=allow protocol=TCP localport=8081
 
 # Folders
 New-Item -ItemType Directory c:\tmp
