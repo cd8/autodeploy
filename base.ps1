@@ -21,7 +21,7 @@ Set-WinHomeLocation -GeoId 12
 Set-WinSystemLocale en-AU 
 
 # Install iis
-Install-WindowsFeature -Name Web-Default-Doc,Web-Dir-Browsing,Web-Http-Errors,Web-Static-Content,Web-Http-Logging,Web-Stat-Compression,Web-Filtering,Web-Windows-Auth,Web-Net-Ext,Web-Net-Ext45,Web-Asp-Net,Web-Asp-Net45,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-WebSockets,Web-Mgmt-Console,Web-Scripting-Tools,Web-Mgmt-Service,NET-Framework-Core,NET-HTTP-Activation,NET-Framework-45-Core,NET-Framework-45-ASPNET,NET-WCF-HTTP-Activation45,NET-WCF-TCP-PortSharing45,WAS-Process-Model,WAS-NET-Environment,WAS-Config-APIs
+Install-WindowsFeature -Name Web-Default-Doc,Web-Dir-Browsing,Web-Http-Errors,Web-Static-Content,Web-Http-Logging,Web-Stat-Compression,Web-Filtering,Web-Windows-Auth,Web-Net-Ext,Web-Net-Ext45,Web-Asp-Net,Web-Asp-Net45,Web-ISAPI-Ext,Web-ISAPI-Filter,Web-WebSockets,Web-Mgmt-Console,Web-Scripting-Tools,Web-Mgmt-Service,NET-Framework-Core,NET-HTTP-Activation,NET-Framework-45-Core,NET-Framework-45-ASPNET,NET-WCF-HTTP-Activation45,NET-WCF-TCP-PortSharing45,WAS-Process-Model,WAS-NET-Environment,WAS-Config-APIs,Web-Dyn-Compression
 
  
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\WebManagement\Server -Name WindowsAuthenticationEnabled -Value 1 -PropertyType DWORD -Force
