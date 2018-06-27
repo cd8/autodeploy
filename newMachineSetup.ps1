@@ -10,10 +10,13 @@ Install-WindowsFeature -Name Web-Default-Doc,Web-Dir-Browsing,Web-Http-Errors,We
 
  
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\WebManagement\Server -Name WindowsAuthenticationEnabled -Value 1 -PropertyType DWORD -Force
+sc privs wmsvc SeChangeNotifyPrivilege/SeImpersonatePrivilege/SeAssignPrimaryTokenPrivilege/SeIncreaseQuotaPrivilege
+
 Stop-Service wmsvc
 Set-Service wmsvc -startuptype "automatic"
 Start-Service wmsvc
- 
+
+
 Invoke-WebRequest http://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi -outfile c:\tmp\WebDeploy_amd64_en-US.msi
 Start-Process C:\tmp\WebDeploy_amd64_en-US.msi -ArgumentList /passive, ADDLOCAL=ALL, /norestart -Wait
 
